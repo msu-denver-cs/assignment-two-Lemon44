@@ -1,30 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Make:</strong>
-  <%= @car.make %>
+  <strong>Manufacturer:</strong>
+  <%= @car.make.name %>
 </p>
 
 <p>
-  <strong>Model:</strong>
-  <%= @car.model %>
+  <strong>Country:</strong>
+  <%= @car.make.country %>
 </p>
 
 <p>
-  <strong>Year:</strong>
-  <%= @car.year %>
+  <strong>Model title:</strong>
+  <%= @car.make.model %>
 </p>
 
 <p>
-  <strong>Vin:</strong>
-  <%= @car.integer %>
+  <strong>Vin number:</strong>
+  <%= @car.vin %>
 </p>
 
-<ul>
+<p>
+<strong>Part:</strong>
   <% @car.parts.each do |part| %>
-  <li><%= part.name %></li>
+    <li><%= part.name %></li>
   <% end %>
-</ul>
+</p>
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>

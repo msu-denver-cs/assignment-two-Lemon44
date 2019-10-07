@@ -12,6 +12,9 @@ class PartsController < ApplicationController
   def show
   end
 
+  def search  
+  end
+
   # GET /parts/new
   def new
     @part = Part.new
@@ -71,6 +74,6 @@ class PartsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def part_params
-      params.require(:part).permit(:name, :make_num, :product_num, :car_id => [])
+      params.require(:part).permit(:name, :car_ids => [])
     end
 end
